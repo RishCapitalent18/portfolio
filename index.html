@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rishabh Karthik Ramesh - AI/ML, Data & Security Engineer</title>
+<meta name="description" content="Rishabh Karthik Ramesh - MS Computer Engineering @ Virginia Tech. Engineer across AI/ML, data science & engineering, and cybersecurity / AI security." />
+<meta name="author" content="Rishabh Karthik Ramesh" />
+
+<!-- Open Graph / social preview -->
+<meta property="og:title" content="Rishabh Karthik Ramesh - AI/ML, Data & Security Engineer" />
+<meta property="og:description" content="Engineer across AI/ML, data science & engineering, and cybersecurity / AI security. MS Computer Engineering @ Virginia Tech." />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#05060a" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  /* ============ CONFIG NOTE ============
+     Edit the CONFIG object in the <script> at the bottom of this file
+     to set your GitHub username and links. That's the only thing to change. */
+
+  :root {
+    --bg: #05060a;
+    --bg-soft: #0a0c14;
+    --panel: #0e111b;
+    --panel-2: #131726;
+    --border: #1d2333;
+    --text: #e8ecf5;
+    --muted: #99a2b8;
+    --faint: #6b7488;
+    --accent: #6ea8ff;
+    --accent-2: #9b6cff;
+    --accent-3: #35e0c5;
+    --glow: 0 0 60px rgba(110, 168, 255, 0.25);
+    --radius: 16px;
+    --maxw: 1080px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ---- Ambient background ---- */
+  .bg-aura {
+    position: fixed; inset: 0; z-index: -2; pointer-events: none;
+    background:
+      radial-gradient(60vw 60vw at 12% -5%, rgba(110,168,255,0.18), transparent 60%),
+      radial-gradient(50vw 50vw at 95% 8%, rgba(155,108,255,0.16), transparent 60%),
+      radial-gradient(55vw 55vw at 50% 110%, rgba(53,224,197,0.12), transparent 60%);
+  }
+  .bg-grid {
+    position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: 0.5;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: radial-gradient(80% 60% at 50% 0%, #000 40%, transparent 100%);
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  /* ---- Nav ---- */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    backdrop-filter: blur(14px);
+    background: rgba(5,6,10,0.65);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { font-family: "Sora"; font-weight: 700; letter-spacing: -0.02em; font-size: 1.05rem; }
+  .brand span { color: var(--accent); }
+  .nav-links { display: flex; gap: 26px; }
+  .nav-links a { color: var(--muted); font-size: 0.92rem; font-weight: 500; transition: color .2s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    border: 1px solid var(--border); padding: 8px 16px; border-radius: 10px;
+    color: var(--text); font-weight: 600; font-size: 0.88rem; transition: all .2s;
+    background: var(--panel);
+  }
+  .nav-cta:hover { border-color: var(--accent); box-shadow: var(--glow); }
+  @media (max-width: 720px) { .nav-links { display: none; } }
+
+  /* ---- Hero ---- */
+  header.hero { padding: 90px 0 70px; position: relative; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid var(--border); background: var(--panel);
+    padding: 6px 14px; border-radius: 999px; font-size: 0.82rem; color: var(--muted);
+    margin-bottom: 26px;
+  }
+  .pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-3); box-shadow: 0 0 10px var(--accent-3); }
+  h1.title {
+    font-family: "Sora"; font-weight: 800; letter-spacing: -0.035em;
+    font-size: clamp(1.6rem, 4.6vw, 3.4rem); line-height: 1.08;
+    background: linear-gradient(180deg, #fff 30%, #aeb8d4 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .title .name-line { white-space: nowrap; }
+  .title .grad {
+    background: linear-gradient(100deg, var(--accent), var(--accent-2) 55%, var(--accent-3));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .subtitle {
+    margin-top: 22px; font-size: clamp(1.02rem, 2vw, 1.22rem); color: var(--muted);
+    max-width: 640px;
+  }
+  .subtitle strong { color: var(--text); font-weight: 600; }
+  .hero-cta { display: flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 9px;
+    padding: 13px 22px; border-radius: 12px; font-weight: 600; font-size: 0.95rem;
+    transition: all .2s; border: 1px solid transparent; cursor: pointer;
+  }
+  .btn-primary {
+    background: linear-gradient(100deg, var(--accent), var(--accent-2));
+    color: #07101f; box-shadow: var(--glow);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 70px rgba(110,168,255,0.45); }
+  .btn-ghost { background: var(--panel); border-color: var(--border); color: var(--text); }
+  .btn-ghost:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+  .hero-wrap { display: flex; align-items: center; gap: 56px; }
+  .hero-text { flex: 1; min-width: 0; }
+  .hero-photo { flex-shrink: 0; }
+  .photo-ring {
+    width: 290px; height: 290px; border-radius: 50%; padding: 5px;
+    background: conic-gradient(from 160deg, var(--accent), var(--accent-2), var(--accent-3), var(--accent));
+    box-shadow: 0 0 80px rgba(110,168,255,0.30);
+    animation: spin 14s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .photo-ring img {
+    width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block;
+    border: 5px solid var(--bg); background: var(--panel); animation: spin 14s linear infinite reverse;
+  }
+  @media (max-width: 900px) {
+    .hero-wrap { flex-direction: column; align-items: flex-start; gap: 34px; }
+    .photo-ring { width: 170px; height: 170px; }
+  }
+
+  .hero-stats { display: flex; gap: 40px; margin-top: 56px; flex-wrap: wrap; }
+  .stat .num {
+    font-family: "Sora"; font-weight: 700; font-size: 1.9rem;
+    background: linear-gradient(120deg, var(--accent), var(--accent-3));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .stat .lbl { color: var(--faint); font-size: 0.84rem; margin-top: 2px; }
+  #role-rotator { transition: opacity .4s ease; display: inline-block; min-height: 1.1em; }
+
+  /* ---- Focus areas ---- */
+  .focus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  @media (max-width: 820px) { .focus-grid { grid-template-columns: 1fr; } }
+  .focus-card {
+    background: linear-gradient(180deg, var(--panel), var(--bg-soft));
+    border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; transition: all .25s;
+  }
+  .focus-card:hover { border-color: rgba(110,168,255,0.5); transform: translateY(-4px); box-shadow: 0 14px 40px rgba(0,0,0,0.35); }
+  .focus-card .fc-ic { font-size: 1.3rem; margin-bottom: 10px; }
+  .focus-card h4 { font-family: "Sora"; font-size: 1.12rem; margin-bottom: 6px; letter-spacing: -0.01em; }
+  .focus-card .fc-roles { font-size: 0.78rem; color: var(--accent); font-weight: 600; margin-bottom: 12px; line-height: 1.45; }
+  .focus-card .blurb { color: var(--muted); font-size: 0.92rem; margin-bottom: 14px; }
+  .focus-card .chips { margin-bottom: 14px; }
+  .focus-card .proof {
+    font-family: "JetBrains Mono"; font-size: 0.76rem; color: var(--accent-3);
+    border-top: 1px solid var(--border); padding-top: 12px;
+  }
+  .focus-card .proof b { color: var(--text); font-weight: 600; }
+
+  /* ---- Section scaffolding ---- */
+  section { padding: 72px 0; position: relative; }
+  .sec-head { margin-bottom: 44px; }
+  .sec-kicker {
+    font-family: "JetBrains Mono"; font-size: 0.8rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 12px;
+  }
+  .sec-title {
+    font-family: "Sora"; font-weight: 700; letter-spacing: -0.02em;
+    font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+  }
+  .sec-sub { color: var(--muted); margin-top: 12px; max-width: 600px; }
+
+  /* ---- About ---- */
+  .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: start; }
+  .about-grid p { color: var(--muted); margin-bottom: 16px; }
+  .about-grid p strong { color: var(--text); }
+  .about-card {
+    background: linear-gradient(180deg, var(--panel), var(--bg-soft));
+    border: 1px solid var(--border); border-radius: var(--radius); padding: 26px;
+  }
+  .about-card h4 { font-family: "Sora"; font-size: 0.95rem; margin-bottom: 16px; color: var(--text); }
+  .kv { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+  .kv:last-child { border-bottom: none; }
+  .kv .k { color: var(--faint); }
+  .kv .v { color: var(--text); font-weight: 500; text-align: right; }
+  @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; } }
+
+  /* ---- Timeline / Experience ---- */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before {
+    content: ""; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 2px;
+    background: linear-gradient(180deg, var(--accent), var(--accent-2), transparent);
+  }
+  .tl-item { position: relative; padding: 0 0 38px 8px; }
+  .tl-item::before {
+    content: ""; position: absolute; left: -28px; top: 6px; width: 14px; height: 14px;
+    border-radius: 50%; background: var(--bg); border: 2px solid var(--accent);
+    box-shadow: 0 0 0 4px rgba(110,168,255,0.12);
+  }
+  .tl-row { display: flex; justify-content: space-between; gap: 14px; flex-wrap: wrap; align-items: baseline; }
+  .tl-role { font-family: "Sora"; font-weight: 600; font-size: 1.1rem; }
+  .tl-org { color: var(--accent); font-weight: 500; }
+  .tl-date { color: var(--faint); font-size: 0.84rem; font-family: "JetBrains Mono"; white-space: nowrap; }
+  .tl-item ul { margin: 12px 0 0; padding-left: 18px; list-style: none; }
+  .tl-item li { color: var(--muted); margin-bottom: 9px; font-size: 0.95rem; }
+  .tl-item li b { color: var(--text); font-weight: 600; }
+  .pso {
+    font-family: "JetBrains Mono"; font-size: 0.66rem; letter-spacing: 0.09em; text-transform: uppercase;
+    color: var(--accent-3); margin-right: 8px; display: inline-block; min-width: 62px;
+  }
+  .pso.imp { color: var(--accent); }
+  .pso-line { color: var(--muted); font-size: 0.93rem; margin-bottom: 9px; }
+  .pso-line:last-child { margin-bottom: 0; }
+  .pso-line b { color: var(--text); font-weight: 600; }
+
+  /* ---- Projects ---- */
+  .proj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  @media (max-width: 760px) { .proj-grid { grid-template-columns: 1fr; } }
+  .card {
+    background: linear-gradient(180deg, var(--panel), var(--bg-soft));
+    border: 1px solid var(--border); border-radius: var(--radius); padding: 26px;
+    transition: all .25s; position: relative; overflow: hidden;
+  }
+  .card::after {
+    content: ""; position: absolute; inset: 0; border-radius: var(--radius);
+    background: radial-gradient(120% 80% at 50% -20%, rgba(110,168,255,0.10), transparent 60%);
+    opacity: 0; transition: opacity .25s; pointer-events: none;
+  }
+  .card:hover { transform: translateY(-4px); border-color: rgba(110,168,255,0.5); box-shadow: 0 18px 50px rgba(0,0,0,0.4); }
+  .card:hover::after { opacity: 1; }
+  .card.feat { grid-column: span 2; }
+  @media (max-width: 760px) { .card.feat { grid-column: span 1; } }
+  .card-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; gap: 10px; }
+  .card-tag {
+    font-family: "JetBrains Mono"; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent-3); border: 1px solid var(--border); padding: 4px 9px; border-radius: 7px;
+  }
+  .card-date { font-family: "JetBrains Mono"; font-size: 0.74rem; color: var(--faint); white-space: nowrap; }
+  .sub-head { font-family: "Sora"; font-weight: 600; font-size: 1.3rem; margin: 56px 0 22px; }
+  .card.compact h3 { font-size: 1.08rem; }
+  .card.compact p { font-size: 0.9rem; }
+  .card h3 { font-family: "Sora"; font-size: 1.25rem; letter-spacing: -0.01em; margin-bottom: 10px; }
+  .card p { color: var(--muted); font-size: 0.94rem; margin-bottom: 16px; }
+  .card .metrics { display: flex; gap: 22px; margin-bottom: 16px; flex-wrap: wrap; }
+  .card .metrics .m .mv {
+    font-family: "Sora"; font-weight: 700; font-size: 1.3rem;
+    background: linear-gradient(120deg, var(--accent), var(--accent-3));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .card .metrics .m .ml { font-size: 0.76rem; color: var(--faint); }
+  .tech { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; }
+  .tech span {
+    font-size: 0.76rem; color: var(--muted); background: var(--panel-2);
+    border: 1px solid var(--border); padding: 4px 10px; border-radius: 7px; font-family: "JetBrains Mono";
+  }
+  .card-links { display: flex; gap: 16px; margin-top: 16px; }
+  .card-links a { color: var(--accent); font-size: 0.86rem; font-weight: 600; display: inline-flex; gap: 5px; align-items: center; }
+  .card-links a:hover { text-decoration: underline; }
+
+  /* ---- Live GitHub ---- */
+  .gh-head { display: flex; align-items: center; justify-content: space-between; margin: 56px 0 22px; flex-wrap: wrap; gap: 12px; }
+  .gh-head h3 { font-family: "Sora"; font-size: 1.3rem; }
+  .gh-head a { color: var(--accent); font-size: 0.9rem; font-weight: 600; }
+  .gh-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 760px) { .gh-grid { grid-template-columns: 1fr; } }
+  .repo {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 13px; padding: 18px;
+    transition: all .2s; display: flex; flex-direction: column; min-height: 150px;
+  }
+  .repo:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .repo .rn { font-family: "Sora"; font-weight: 600; font-size: 1rem; color: var(--text); margin-bottom: 8px; word-break: break-word; }
+  .repo .rd { color: var(--muted); font-size: 0.86rem; flex: 1; }
+  .repo .rm { display: flex; gap: 16px; margin-top: 12px; font-size: 0.78rem; color: var(--faint); font-family: "JetBrains Mono"; }
+  .repo .rm .lang::before { content: "●"; color: var(--accent); margin-right: 5px; }
+  .gh-loading, .gh-empty { color: var(--faint); font-size: 0.9rem; padding: 10px 0; }
+
+  /* ---- Skills ---- */
+  .skill-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  @media (max-width: 760px) { .skill-grid { grid-template-columns: 1fr; } }
+  .skill-card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
+  .skill-card h4 { font-family: "Sora"; font-size: 1rem; margin-bottom: 14px; display: flex; align-items: center; gap: 9px; }
+  .skill-card h4 .ic { color: var(--accent); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips span {
+    font-size: 0.82rem; background: var(--panel-2); border: 1px solid var(--border);
+    padding: 6px 12px; border-radius: 8px; color: var(--muted); transition: all .2s;
+  }
+  .chips span:hover { color: var(--text); border-color: var(--accent); }
+
+  /* ---- Education ---- */
+  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 760px) { .edu-grid { grid-template-columns: 1fr; } }
+  .edu-card { background: linear-gradient(180deg, var(--panel), var(--bg-soft)); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
+  .edu-card .deg { font-family: "Sora"; font-weight: 600; font-size: 1.1rem; }
+  .edu-card .sch { color: var(--accent); margin: 6px 0; }
+  .edu-card .dt { color: var(--faint); font-size: 0.84rem; font-family: "JetBrains Mono"; }
+
+  /* ---- Contact ---- */
+  .contact { text-align: center; padding: 90px 0; }
+  .contact h2 { font-family: "Sora"; font-weight: 800; font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: -0.03em; }
+  .contact h2 .grad {
+    background: linear-gradient(100deg, var(--accent), var(--accent-2), var(--accent-3));
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .contact p { color: var(--muted); margin: 18px auto 32px; max-width: 480px; }
+  .contact-links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+  footer { border-top: 1px solid var(--border); padding: 30px 0; text-align: center; color: var(--faint); font-size: 0.85rem; }
+
+  /* ---- Reveal animation ---- */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  ::selection { background: rgba(110,168,255,0.3); }
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+</style>
+</head>
+<body>
+<div class="bg-aura"></div>
+<div class="bg-grid"></div>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Rishabh Karthik Ramesh</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#focus">Focus</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+    </div>
+    <a class="nav-cta" id="nav-resume" href="#" target="_blank" rel="noopener">Resume ↗</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-wrap">
+   <div class="hero-photo reveal">
+     <div class="photo-ring">
+       <img id="profile-img" src="profile.jpg" alt="Rishabh Karthik Ramesh"
+            onerror="this.closest('.hero-photo').style.display='none'" />
+     </div>
+   </div>
+   <div class="hero-text">
+    <div class="pill reveal"><span class="dot"></span> Open to Internships &amp; Full-Time roles · June 2026</div>
+    <h1 class="title reveal"><span class="name-line">Rishabh Karthik Ramesh</span><br /><span class="grad">AI Engineer &amp; Cybersecurity</span></h1>
+    <p class="subtitle reveal">
+      MS Computer Engineering @ <strong>Virginia Tech</strong>. I work across <strong>AI/ML, data, and
+      security</strong> - building LLM systems and agentic RAG, engineering reliable data pipelines and
+      analytics, and bringing a cybersecurity-first lens to everything I ship.
+    </p>
+    <div class="hero-cta reveal">
+      <a class="btn btn-primary" href="#projects">View Projects →</a>
+      <a class="btn btn-ghost" id="hero-resume" href="#" target="_blank" rel="noopener">📄 Download Resume</a>
+    </div>
+    <div class="hero-stats reveal">
+      <div class="stat"><div class="num">2+ yrs</div><div class="lbl">Work experience</div></div>
+      <div class="stat"><div class="num">1</div><div class="lbl">Published research paper</div></div>
+      <div class="stat"><div class="num">4&times;</div><div class="lbl">Azure certified</div></div>
+    </div>
+   </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">// about</div>
+      <h2 class="sec-title">Building trustworthy AI that drives business impact</h2>
+    </div>
+    <div class="about-grid reveal">
+      <div>
+        <p>
+          I'm a computer engineer focused on building AI systems that are <strong>safe and privacy-preserving by
+          design</strong> - never as an afterthought. My MS in Computer Engineering at <strong>Virginia Tech</strong>
+          deepened my work in LLM fine-tuning and hallucination mitigation, while my background in cybersecurity and
+          GRC trained me to treat data protection, risk, and compliance as first-class requirements.
+        </p>
+        <p>
+          That combination shapes how I build. At <strong>Wipro</strong> I ran 140+ cloud and cybersecurity risk
+          assessments and built the controls and dashboards teams relied on; as a <strong>Graduate Teaching
+          Assistant</strong> I evaluated secure data systems against compliance and risk principles - reinforcing
+          that trustworthy data handling is what makes AI usable in production.
+        </p>
+        <p>
+          Above all, I deliver <strong>reliable, data-driven solutions that move business outcomes</strong> - turning
+          models and data into measurable impact. I care deeply about evaluation: every project here ships with real,
+          measured numbers, and I aim to build AI that organizations can trust with sensitive data and real decisions.
+        </p>
+      </div>
+      <div class="about-card">
+        <h4>At a glance</h4>
+        <div class="kv"><span class="k">Location</span><span class="v">Blacksburg, VA · USA</span></div>
+        <div class="kv"><span class="k">Focus</span><span class="v">Safe &amp; Private AI · ML Eval</span></div>
+        <div class="kv"><span class="k">Languages</span><span class="v">Python · SQL</span></div>
+        <div class="kv"><span class="k">Cloud</span><span class="v">Azure (4× certified)</span></div>
+        <div class="kv"><span class="k">Graduated</span><span class="v">May 2026</span></div>
+        <div class="kv"><span class="k">Status</span><span class="v">Open to full-time</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="focus">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">// where I fit</div>
+      <h2 class="sec-title">Role-ready in three specializations</h2>
+      <p class="sec-sub">Not a generalist spread thin - each area below is backed by shipped, measured work and maps to the exact roles I'm hiring-ready for today.</p>
+    </div>
+    <div class="focus-grid">
+      <div class="focus-card reveal">
+        <div class="fc-ic">🧠</div>
+        <h4>AI / ML Engineering</h4>
+        <div class="fc-roles">AI Engineer · ML Engineer · Applied Scientist · GenAI Engineer</div>
+        <div class="blurb">LLM fine-tuning, agentic RAG, and computer vision - from data pipelines to evaluated, deployable models.</div>
+        <div class="chips">
+          <span>LLM Fine-tuning</span><span>RAG / LangGraph</span><span>PyTorch</span><span>Computer Vision</span><span>Model Eval</span>
+        </div>
+        <div class="proof">Proof: <b>49.4%</b> reasoning SFT · <b>&lt;0.1</b> loss (KG+MoE) · <b>90.35%</b> YOLOv5 detection</div>
+      </div>
+      <div class="focus-card reveal">
+        <div class="fc-ic">📊</div>
+        <h4>Data Science / Engineering / Analytics</h4>
+        <div class="fc-roles">Data Scientist · Data Engineer · Data Analyst · Analytics Engineer</div>
+        <div class="blurb">ETL pipelines, warehouses, and dashboards that turn messy multi-source data into reliable, decision-ready insight.</div>
+        <div class="chips">
+          <span>Python</span><span>SQL</span><span>PostgreSQL</span><span>Spark</span><span>Pandas</span><span>Tableau</span>
+        </div>
+        <div class="proof">Proof: <b>+65%</b> utilization · <b>+24%</b> accuracy · <b>4,096-pt</b> routes, sub-0.5s queries</div>
+      </div>
+      <div class="focus-card reveal">
+        <div class="fc-ic">🛡️</div>
+        <h4>Cybersecurity &amp; AI Security</h4>
+        <div class="fc-roles">Cybersecurity Analyst · GRC Analyst · AI Security &amp; Risk Engineer</div>
+        <div class="blurb">Enterprise risk, GRC, and compliance - plus safety-first AI that grounds its claims and abstains when unsure.</div>
+        <div class="chips">
+          <span>ServiceNow GRC</span><span>Risk Assessment</span><span>EU AI Act</span><span>GDPR / CCPA</span><span>Hallucination Mitigation</span>
+        </div>
+        <div class="proof">Proof: <b>140+</b> risk assessments · <b>37%</b> earlier risk surfacing · <b>25%</b> faster closure</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">// experience</div>
+      <h2 class="sec-title">Where I've worked</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-row">
+          <div><span class="tl-role">Path Perception &amp; Validation Engineer</span> · <span class="tl-org">Victor Tango SAE, Virginia Tech</span></div>
+          <span class="tl-date">Sep 2024 - May 2025</span>
+        </div>
+        <ul>
+          <li><span class="pso">Problem</span>The autonomous-vehicle team needed proof its self-driving path model was safe and accurate before committing to a version.</li>
+          <li><span class="pso">Approach</span>Built a <b>MATLAB + ROS test framework</b> validating the model across <b>2 mapped areas</b> - obstacle rerouting, full 360&deg; turns, and adherence within <b>0.5 m</b> of the planned route - and benchmarked <b>3 model versions</b> on accuracy and inference time over a PostgreSQL store of <b>4,096-point</b> routes with <b>sub-0.5 s</b> queries.</li>
+          <li><span class="pso imp">Impact</span>Recommended the best-performing version, which the team <b>shipped</b>, reducing route-planning errors against the baseline.</li>
+        </ul>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-row">
+          <div><span class="tl-role">Graduate Teaching Assistant</span> · <span class="tl-org">Virginia Tech</span></div>
+          <span class="tl-date">Feb 2025 - May 2025</span>
+        </div>
+        <ul>
+          <li><span class="pso">Problem</span>Student teams building <b>secure IoT data systems</b> needed rigorous evaluation against cybersecurity and compliance standards.</li>
+          <li><span class="pso">Approach</span>Assessed implementations against risk and control-design principles and mentored teams on secure data acquisition, telemetry handling, and system-level design.</li>
+          <li><span class="pso imp">Impact</span>Delivered structured, per-team feedback that raised the quality of secure-design and risk decisions across submitted coursework.</li>
+        </ul>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-row">
+          <div><span class="tl-role">Cybersecurity Analyst L2 - Risk &amp; Data Analytics</span> · <span class="tl-org">Wipro</span></div>
+          <span class="tl-date">Apr 2022 - Aug 2024</span>
+        </div>
+        <ul>
+          <li><span class="pso">Problem</span>Enterprise cloud and cybersecurity risk assessments were processed inconsistently, slowing audits and delaying remediation.</li>
+          <li><span class="pso">Approach</span>Built structured ServiceNow GRC pipelines processing <b>140+ assessments</b> with schema-validated, audit-ready RCA/VRA reporting; designed risk-scoring models to prioritize high-risk engagements and stood up security KPI dashboards for control effectiveness and SLA tracking.</li>
+          <li><span class="pso imp">Impact</span>Surfaced <b>37% of critical risks earlier</b>, cut remediation closure time by <b>25%</b>, and upskilled <b>2 junior analysts</b> on risk classification and root-cause analysis.</li>
+        </ul>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-row">
+          <div><span class="tl-role">IoT Intern - Data Analytics System</span> · <span class="tl-org">TVS Supply Chain Solutions</span></div>
+          <span class="tl-date">Nov 2020 - Dec 2020</span>
+        </div>
+        <ul>
+          <li><span class="pso">Problem</span>Warehouse forklift operations had no real-time visibility into equipment usage.</li>
+          <li><span class="pso">Approach</span>Designed telemetry ingestion workflows streaming live forklift data into analytics-ready PostgreSQL warehouse tables, with reporting dashboards on top.</li>
+          <li><span class="pso imp">Impact</span>Improved warehouse equipment utilization efficiency by <b>65%</b> through real-time reporting.</li>
+        </ul>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-row">
+          <div><span class="tl-role">Data Engineering Intern</span> · <span class="tl-org">TVS Supply Chain Solutions</span></div>
+          <span class="tl-date">Jun 2019 - Jul 2019</span>
+        </div>
+        <ul>
+          <li><span class="pso">Problem</span>Multi-source assembly-line data was inconsistent and lacked real-time manufacturing metrics.</li>
+          <li><span class="pso">Approach</span>Built a custom <b>ETL pipeline</b> ingesting streaming API data into PostgreSQL with schema validation and data-quality controls, exposing metrics through Django dashboards.</li>
+          <li><span class="pso imp">Impact</span>Improved part-recognition accuracy by <b>24%</b> with reliable, real-time visibility.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">// projects</div>
+      <h2 class="sec-title">Things I've built</h2>
+      <p class="sec-sub">Flagship work below, plus a live feed of my latest GitHub repositories.</p>
+    </div>
+
+    <div class="proj-grid">
+      <div class="card feat reveal">
+        <div class="card-top">
+          <span class="card-tag">Agentic AI · RAG</span>
+          <span class="card-date">2025</span>
+        </div>
+        <h3>Agentic RAG over Financial Filings</h3>
+        <p class="pso-line"><span class="pso">Problem</span>LLMs answering questions over dense financial filings hallucinate and cite nothing - unacceptable in a finance setting.</p>
+        <p class="pso-line"><span class="pso">Approach</span>Built a <b>5-node LangGraph agent</b> (retrieve &rarr; grade context &rarr; rewrite/loop &rarr; generate &rarr; self-check) over a <b>Chroma/pgvector</b> store with Hugging Face embeddings - top-8 retrieval re-ranked to top-3 - served behind async FastAPI with token streaming.</p>
+        <p class="pso-line"><span class="pso imp">Impact</span>Grounds every sentence in cited passages and abstains when unsupported, validated on a <b>20-question</b> gold set of answerable and deliberately unanswerable cases.</p>
+        <div class="metrics">
+          <div class="m"><div class="mv">5-node</div><div class="ml">agent, retry cap 2</div></div>
+          <div class="m"><div class="mv">8&rarr;3</div><div class="ml">retrieved &amp; re-ranked</div></div>
+          <div class="m"><div class="mv">20-Q</div><div class="ml">faithfulness eval set</div></div>
+        </div>
+        <div class="tech">
+          <span>Python</span><span>LangGraph</span><span>FastAPI</span><span>Chroma</span><span>pgvector</span><span>Hugging Face</span><span>Llama 3.1</span>
+        </div>
+        <div class="card-links" data-repo="agentic-rag-filings">
+          <a href="#" data-role="repo" target="_blank" rel="noopener">↗ View Code</a>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-top"><span class="card-tag">LLM · Fine-tuning</span><span class="card-date">Aug-Dec 2025</span></div>
+        <h3>Large-Scale Reasoning via Supervised Fine-Tuning</h3>
+        <p class="pso-line"><span class="pso">Problem</span>Base Qwen2.5-3B-Instruct underperformed on hard reasoning benchmarks.</p>
+        <p class="pso-line"><span class="pso">Approach</span>Built config-driven <b>SFT pipelines</b> (YAML + Bash) for scalable, reproducible runs and applied prompt-response optimization on <b>LIMOPro</b>.</p>
+        <p class="pso-line"><span class="pso imp">Impact</span>Reached <b>49.4%</b> on AIME 24/25 + GPQA Diamond, outperforming the random baseline.</p>
+        <div class="metrics">
+          <div class="m"><div class="mv">49.4%</div><div class="ml">reasoning accuracy</div></div>
+          <div class="m"><div class="mv">LIMOPro</div><div class="ml">beats random baseline</div></div>
+        </div>
+        <div class="tech">
+          <span>Python</span><span>PyTorch</span><span>Qwen2.5-3B</span><span>YAML</span><span>Bash</span>
+        </div>
+        <div class="card-links" data-repo="">
+          <a href="#" data-role="repo" target="_blank" rel="noopener">↗ View Code</a>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-top"><span class="card-tag">LLM · Research</span><span class="card-date">Jan-May 2025</span></div>
+        <h3>Hallucination Mitigation with Knowledge Graphs &amp; MoE</h3>
+        <p class="pso-line"><span class="pso">Problem</span>LLM QA systems produce factually inconsistent, hallucinated answers.</p>
+        <p class="pso-line"><span class="pso">Approach</span>Built a knowledge-graph-grounded <b>Mixture-of-Experts</b> QA system on <b>Qwen2.5-7B</b>, training and validating domain-specific datasets to remediate hallucinations, with a Streamlit interface for evaluation.</p>
+        <p class="pso-line"><span class="pso imp">Impact</span>Drove training loss <b>below 0.1</b>, with accuracy/loss tracking confirming effective learning.</p>
+        <div class="metrics">
+          <div class="m"><div class="mv">&lt;0.1</div><div class="ml">training loss</div></div>
+          <div class="m"><div class="mv">KG + MoE</div><div class="ml">expert routing</div></div>
+        </div>
+        <div class="tech">
+          <span>Python</span><span>Qwen2.5-7B</span><span>Knowledge Graphs</span><span>RAG</span><span>Streamlit</span>
+        </div>
+        <div class="card-links" data-repo="">
+          <a href="#" data-role="repo" target="_blank" rel="noopener">↗ View Code</a>
+        </div>
+      </div>
+
+      <div class="card reveal">
+        <div class="card-top"><span class="card-tag">ML · Fraud / FinTech</span><span class="card-date">2021</span></div>
+        <h3>End-to-End Credit Card Fraud Detection</h3>
+        <p class="pso-line"><span class="pso">Problem</span>Fraudulent card transactions are rare and hide within normal spending behavior.</p>
+        <p class="pso-line"><span class="pso">Approach</span>Built a neural-network pipeline using <b>Self-Organizing Maps</b> to model and surface anomalous spending, tuned via iterative epoch and probability-based scoring.</p>
+        <p class="pso-line"><span class="pso imp">Impact</span>Achieved <b>93.19%</b> fraud-detection accuracy.</p>
+        <div class="metrics">
+          <div class="m"><div class="mv">93.19%</div><div class="ml">detection accuracy</div></div>
+          <div class="m"><div class="mv">SOM</div><div class="ml">anomaly modeling</div></div>
+        </div>
+        <div class="tech">
+          <span>Python</span><span>Neural Networks</span><span>Self-Organizing Maps</span><span>Anomaly Detection</span>
+        </div>
+        <div class="card-links" data-repo="aws-fraud-detector">
+          <a href="#" data-role="repo" target="_blank" rel="noopener">↗ View Code</a>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub-head reveal">More projects</h3>
+    <div class="proj-grid">
+      <div class="card compact reveal">
+        <div class="card-top"><span class="card-tag">Computer Vision</span><span class="card-date">Jan-May 2025</span></div>
+        <h3>Multimodal Image Captioning Pipeline</h3>
+        <p class="pso-line"><span class="pso">Problem</span>Generate natural-language captions from images (vision-language grounding).</p>
+        <p class="pso-line"><span class="pso">Approach</span>Paired <b>ImageNet VGG16</b> features with an <b>LSTM</b> decoder, reusing <b>GloVe</b> embeddings and Adam over a reproducible preprocessing pipeline.</p>
+        <p class="pso-line"><span class="pso imp">Impact</span>Reached <b>BLEU-1 up to 0.34</b> (BLEU-4 ~0.08); error analysis guided future scaling.</p>
+        <div class="metrics">
+          <div class="m"><div class="mv">0.34</div><div class="ml">max BLEU-1</div></div>
+        </div>
+        <div class="tech"><span>VGG16</span><span>LSTM</span><span>GloVe</span><span>Keras</span></div>
+        <div class="card-links" data-repo=""><a href="#" data-role="repo" target="_blank" rel="noopener">↗ View Code</a></div>
+      </div>
+
+      <div class="card compact reveal">
+        <div class="card-top"><span class="card-tag">Deep Learning</span><span class="card-date">Jan-May 2025</span></div>
+        <h3>Image Classification with Deep Residual Networks</h3>
+        <p class="pso-line"><span class="pso">Problem</span>Deeper CNNs degrade from vanishing gradients on CIFAR-10/100.</p>
+        <p class="pso-line"><span class="pso">Approach</span>Built <b>ResNet-20/32</b> pipelines in Keras with residual blocks, batch norm and ReLU; tuned depth, optimizer and regularization, and compared <b>ResNet-50 transfer learning</b>.</p>
+        <p class="pso-line"><span class="pso imp">Impact</span>Lifted test accuracy from <b>65% to 76%</b> (~7% from tuning; +4% val accuracy via transfer learning).</p>
+        <div class="metrics">
+          <div class="m"><div class="mv">65→76%</div><div class="ml">test accuracy</div></div>
+        </div>
+        <div class="tech"><span>Keras</span><span>ResNet</span><span>CNN</span><span>Transfer Learning</span></div>
+        <div class="card-links" data-repo=""><a href="#" data-role="repo" target="_blank" rel="noopener">↗ View Code</a></div>
+      </div>
+
+      <div class="card compact reveal">
+        <div class="card-top"><span class="card-tag">Object Detection</span><span class="card-date">Aug-Dec 2024</span></div>
+        <h3>Real-Time Suspicious Baggage Detection</h3>
+        <p class="pso-line"><span class="pso">Problem</span>Detect and flag suspicious baggage in real time from a video feed.</p>
+        <p class="pso-line"><span class="pso">Approach</span>Trained a <b>YOLOv5</b> detector with <b>focal-loss gamma</b> on hard samples, deployed on Streamlit with live bounding boxes and class labels.</p>
+        <p class="pso-line"><span class="pso imp">Impact</span>Achieved <b>90.35%</b> detection accuracy with improved precision-recall curves.</p>
+        <div class="metrics">
+          <div class="m"><div class="mv">90.35%</div><div class="ml">accuracy</div></div>
+        </div>
+        <div class="tech"><span>YOLOv5</span><span>Computer Vision</span><span>Streamlit</span><span>Focal Loss</span></div>
+        <div class="card-links" data-repo=""><a href="#" data-role="repo" target="_blank" rel="noopener">↗ View Code</a></div>
+      </div>
+    </div>
+
+    <div class="gh-head reveal">
+      <h3>Latest from GitHub</h3>
+      <a id="gh-profile" href="#" target="_blank" rel="noopener">View all repositories ↗</a>
+    </div>
+    <div class="gh-grid" id="gh-grid">
+      <div class="gh-loading">Loading repositories…</div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">// skills</div>
+      <h2 class="sec-title">Toolbox</h2>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-card reveal">
+        <h4><span class="ic">◆</span> AI / Machine Learning</h4>
+        <div class="chips">
+          <span>LLM Fine-tuning</span><span>RAG</span><span>LangGraph</span><span>Neural Networks</span>
+          <span>Mixture of Experts</span><span>Hallucination Mitigation</span><span>Model Evaluation</span>
+          <span>Computer Vision</span><span>CNN / ResNet</span><span>Object Detection (YOLO)</span><span>LSTM</span>
+          <span>Anomaly Detection</span><span>PyTorch</span><span>TensorFlow</span><span>Keras</span><span>Hugging Face</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h4><span class="ic">◆</span> Programming &amp; Data</h4>
+        <div class="chips">
+          <span>Python</span><span>SQL</span><span>PostgreSQL</span><span>MySQL</span><span>FastAPI</span>
+          <span>Pandas</span><span>NumPy</span><span>Spark</span><span>Streamlit</span><span>Django</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h4><span class="ic">◆</span> Cloud &amp; Security</h4>
+        <div class="chips">
+          <span>Microsoft Azure</span><span>SC-900</span><span>AZ-900</span><span>AI-900</span><span>DP-900</span>
+          <span>Cloud Security</span><span>Identity &amp; Compliance</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h4><span class="ic">◆</span> GRC &amp; Compliance</h4>
+        <div class="chips">
+          <span>Risk Classification</span><span>ServiceNow GRC</span><span>Control Monitoring</span>
+          <span>Vendor Risk Assessment</span><span>EU AI Act</span><span>GDPR</span><span>CCPA</span><span>Tableau</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-kicker">// education</div>
+      <h2 class="sec-title">Education</h2>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <div class="deg">M.S. Computer Engineering</div>
+        <div class="sch">Virginia Tech · Blacksburg, VA</div>
+        <div class="dt">Graduated May 2026</div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="deg">B.Tech Electronics &amp; Communication Engineering</div>
+        <div class="sch">Vellore Institute of Technology · Vellore</div>
+        <div class="dt">Graduated May 2022</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap reveal">
+    <h2>Let's build something <span class="grad">worth shipping.</span></h2>
+    <p>I'm actively interviewing for full-time roles starting 2026. The fastest way to reach me is email.</p>
+    <div class="contact-links">
+      <a class="btn btn-primary" href="mailto:rishabhkramesh@gmail.com">✉ rishabhkramesh@gmail.com</a>
+      <a class="btn btn-ghost" id="contact-linkedin" href="#" target="_blank" rel="noopener">in · LinkedIn</a>
+      <a class="btn btn-ghost" id="contact-github" href="#" target="_blank" rel="noopener">⌥ GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© <span id="year"></span> Rishabh Karthik Ramesh · Built &amp; deployed on Vercel</div>
+</footer>
+
+<script>
+  /* ============================================================
+     CONFIG - edit these three lines, that's it.
+     ============================================================ */
+  const CONFIG = {
+    githubUsername: "RishCapitalent18",                                    // your GitHub username
+    linkedinUrl:    "https://www.linkedin.com/in/rishabh-karthik-ramesh/", // your LinkedIn URL
+    resumePath:     "Resume.pdf",                                          // resume PDF bundled in this folder
+    photoPath:      "profile.jpg"                                          // drop a square headshot here; hides if missing
+  };
+
+  /* --- Wire up links --- */
+  const ghProfileUrl = "https://github.com/" + CONFIG.githubUsername;
+  document.getElementById("gh-profile").href = ghProfileUrl;
+  document.getElementById("contact-github").href = ghProfileUrl;
+  document.getElementById("contact-linkedin").href = CONFIG.linkedinUrl;
+  document.getElementById("nav-resume").href = CONFIG.resumePath;
+  document.getElementById("hero-resume").href = CONFIG.resumePath;
+  document.getElementById("profile-img").src = CONFIG.photoPath;
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Default curated project links -> GitHub profile (until specific repos exist)
+  document.querySelectorAll('.card-links').forEach(el => {
+    const repo = el.getAttribute('data-repo');
+    const link = el.querySelector('[data-role="repo"]');
+    link.href = repo ? (ghProfileUrl + "/" + repo) : ghProfileUrl;
+  });
+
+  /* --- Scroll reveal --- */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach((el, i) => {
+    el.style.transitionDelay = (Math.min(i, 6) * 60) + "ms";
+    io.observe(el);
+  });
+
+  /* --- Live GitHub repos --- */
+  (async function loadRepos() {
+    const grid = document.getElementById("gh-grid");
+    try {
+      const res = await fetch(
+        `https://api.github.com/users/${CONFIG.githubUsername}/repos?per_page=100&sort=updated`,
+        { headers: { Accept: "application/vnd.github+json" } }
+      );
+      if (!res.ok) throw new Error("GitHub API " + res.status);
+      let repos = await res.json();
+      repos = repos
+        .filter(r => !r.fork && !r.archived)
+        .sort((a, b) => (b.stargazers_count - a.stargazers_count) || (new Date(b.pushed_at) - new Date(a.pushed_at)))
+        .slice(0, 6);
+
+      if (!repos.length) { grid.innerHTML = '<div class="gh-empty">No public repositories yet - check back soon.</div>'; return; }
+
+      grid.innerHTML = repos.map(r => `
+        <a class="repo" href="${r.html_url}" target="_blank" rel="noopener">
+          <div class="rn">${r.name}</div>
+          <div class="rd">${r.description ? escapeHtml(r.description) : "No description provided."}</div>
+          <div class="rm">
+            ${r.language ? `<span class="lang">${r.language}</span>` : ""}
+            <span>★ ${r.stargazers_count}</span>
+            <span>⑂ ${r.forks_count}</span>
+          </div>
+        </a>`).join("");
+    } catch (err) {
+      grid.innerHTML = `<div class="gh-empty">Live feed unavailable right now - <a style="color:var(--accent)" href="${ghProfileUrl}" target="_blank" rel="noopener">view my GitHub directly ↗</a></div>`;
+    }
+  })();
+
+  function escapeHtml(s) {
+    return s.replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c]));
+  }
+</script>
+</body>
+</html>
