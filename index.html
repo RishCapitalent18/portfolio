@@ -587,14 +587,14 @@
         <div class="card-top"><span class="card-tag">LLM · Research</span><span class="card-date">Jan-May 2025</span></div>
         <h3>Hallucination Mitigation with Knowledge Graphs &amp; MoE</h3>
         <p class="pso-line"><span class="pso">Problem</span>LLM QA systems produce factually inconsistent, hallucinated answers.</p>
-        <p class="pso-line"><span class="pso">Approach</span>Built a knowledge-graph-grounded <b>Mixture-of-Experts</b> QA system on <b>Qwen2.5-7B</b>, training and validating domain-specific datasets to remediate hallucinations, with a Streamlit interface for evaluation.</p>
+        <p class="pso-line"><span class="pso">Approach</span>Built a knowledge-graph-grounded <b>Mixture-of-Experts</b> QA system with <b>Qwen2.5-3B</b> domain experts and a Qwen2.5-7B router, training and validating domain-specific datasets to remediate hallucinations, with a Streamlit interface for evaluation.</p>
         <p class="pso-line"><span class="pso imp">Impact</span>Drove training loss <b>below 0.1</b>, with accuracy/loss tracking confirming effective learning.</p>
         <div class="metrics">
           <div class="m"><div class="mv">&lt;0.1</div><div class="ml">training loss</div></div>
           <div class="m"><div class="mv">KG + MoE</div><div class="ml">expert routing</div></div>
         </div>
         <div class="tech">
-          <span>Python</span><span>Qwen2.5-7B</span><span>Knowledge Graphs</span><span>RAG</span><span>Streamlit</span>
+          <span>Python</span><span>Qwen2.5-3B / 7B</span><span>Knowledge Graphs</span><span>RAG</span><span>Streamlit</span>
         </div>
         <div class="card-links" data-repo="">
           <a href="#" data-role="repo" target="_blank" rel="noopener">↗ View Code</a>
